@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>专家会议室</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Serif+SC:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="1.5"/><circle cx="16" cy="16" r="4" fill="currentColor"/><path d="M16 2v6M16 24v6M2 16h6M24 16h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </span>
+        <div>
+          <h1>专家会议室</h1>
+          <p class="tagline">诺曼 · 福勒 · 托瓦兹 · 施奈尔 · 沃格尔</p>
+        </div>
+      </div>
+      <nav class="header-nav" aria-label="页面导航">
+        <a href="#pipeline">流程</a>
+        <a href="#experts">专家</a>
+        <a href="#meeting">发起会议</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Pipeline -->
+    <section id="pipeline" class="section pipeline-section">
+      <div class="section-head">
+        <span class="eyebrow">Meeting Protocol</span>
+        <h2>会议流程</h2>
+        <p>议题依次流经各专家，最终由技术总监审阅拍板</p>
+      </div>
+
+      <div class="pipeline" role="list" aria-label="会议流程步骤">
+        <div class="pipeline-track" aria-hidden="true"></div>
+        <div class="pipeline-step" data-step="input" role="listitem">
+          <div class="step-node">
+            <span class="step-icon">📋</span>
+          </div>
+          <span class="step-label">议题输入</span>
+        </div>
+        <div class="pipeline-step" data-step="product" role="listitem">
+          <div class="step-node"><span class="step-icon">🎯</span></div>
+          <span class="step-label">唐·诺曼</span>
+        </div>
+        <div class="pipeline-step" data-step="architect" role="listitem">
+          <div class="step-node"><span class="step-icon">🏗️</span></div>
+          <span class="step-label">马丁·福勒</span>
+        </div>
+        <div class="pipeline-step" data-step="developer" role="listitem">
+          <div class="step-node"><span class="step-icon">⚙️</span></div>
+          <span class="step-label">林纳斯</span>
+        </div>
+        <div class="pipeline-step" data-step="security" role="listitem">
+          <div class="step-node"><span class="step-icon">🛡️</span></div>
+          <span class="step-label">施奈尔</span>
+        </div>
+        <div class="pipeline-step" data-step="discuss" role="listitem">
+          <div class="step-node step-node--optional"><span class="step-icon">💬</span></div>
+          <span class="step-label">交叉讨论</span>
+          <span class="step-badge">可选</span>
+        </div>
+        <div class="pipeline-step" data-step="cto" role="listitem">
+          <div class="step-node step-node--cto"><span class="step-icon">⚖️</span></div>
+          <span class="step-label">沃格尔</span>
+          <span class="step-badge step-badge--veto">一票否决</span>
+        </div>
+        <div class="pipeline-step" data-step="conclusion" role="listitem">
+          <div class="step-node"><span class="step-icon">✅</span></div>
+          <span class="step-label">结论输出</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experts -->
+    <section id="experts" class="section experts-section">
+      <div class="section-head">
+        <span class="eyebrow">Expert Panel</span>
+        <h2>专家席位</h2>
+        <p>点击卡片查看职责与发言边界</p>
+      </div>
+
+      <div class="experts-grid" id="experts-grid"></div>
+    </section>
+
+    <!-- Meeting -->
+    <section id="meeting" class="section meeting-section">
+      <div class="section-head">
+        <span class="eyebrow">Start Session</span>
+        <h2>发起会议</h2>
+        <p>填写议题信息，逐步推进会议流程</p>
+      </div>
+
+      <div class="meeting-layout">
+        <form class="meeting-form" id="meeting-form">
+          <div class="form-group">
+            <label for="topic-title">议题标题</label>
+            <input type="text" id="topic-title" placeholder="例：设计用户登录系统" required>
+          </div>
+          <div class="form-group">
+            <label for="topic-bg">背景</label>
+            <textarea id="topic-bg" rows="2" placeholder="为什么现在要讨论这个问题"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="topic-goal">目标</label>
+            <textarea id="topic-goal" rows="2" placeholder="期望达成什么决策"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="topic-constraints">约束</label>
+            <textarea id="topic-constraints" rows="2" placeholder="时间、预算、人力、合规等"></textarea>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">开始会议</button>
+            <button type="button" class="btn btn-ghost" id="btn-reset">重置</button>
+          </div>
+        </form>
+
+        <div class="meeting-panel">
+          <div class="panel-header">
+            <h3>会议实况</h3>
+            <span class="phase-indicator" id="phase-indicator">等待开始</span>
+          </div>
+
+          <div class="progress-bar" aria-hidden="true">
+            <div class="progress-fill" id="progress-fill"></div>
+          </div>
+
+          <div class="meeting-log" id="meeting-log" aria-live="polite">
+            <div class="log-empty">
+              <span class="log-empty-icon">🪑</span>
+              <p>专家们已就位，等待议题提交</p>
+            </div>
+          </div>
+
+          <div class="meeting-controls" id="meeting-controls" hidden>
+            <button type="button" class="btn btn-primary" id="btn-next">下一位专家发言</button>
+            <button type="button" class="btn btn-ghost" id="btn-discuss">进入交叉讨论</button>
+          </div>
+
+          <div class="cto-decision" id="cto-decision" hidden>
+            <p class="cto-prompt">技术总监审阅完毕，请做出决策：</p>
+            <div class="cto-actions">
+              <button type="button" class="btn btn-approve" id="btn-approve">通过</button>
+              <button type="button" class="btn btn-veto" id="btn-veto">否决</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>专家会议室 · 产品 · 架构 · 开发 · 安全 · 技术总监</p>
+  </footer>
+
+  <!-- Expert detail modal -->
+  <dialog class="expert-modal" id="expert-modal">
+    <div class="modal-inner">
+      <button type="button" class="modal-close" id="modal-close" aria-label="关闭">&times;</button>
+      <div id="modal-content"></div>
+    </div>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
