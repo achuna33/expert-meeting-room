@@ -10,6 +10,9 @@
   --line: #2a3548;
   --line-bright: #3d4f6a;
 
+  --strategy: #f59e0b;
+  --metrics: #8b5cf6;
+  --sre: #06b6d4;
   --product: #e879a6;
   --architect: #5bced4;
   --developer: #6ee7a0;
@@ -246,9 +249,20 @@ main {
   border-style: dashed;
 }
 
-.step-node--cto {
+.step-node--cto,
+.step-node--gate {
   border-color: rgba(212, 168, 83, 0.4);
   box-shadow: 0 0 20px rgba(212, 168, 83, 0.15);
+}
+
+.pipeline-step--phase-a .step-node { border-color: rgba(232, 121, 166, 0.35); }
+.pipeline-step--phase-b .step-node { border-color: rgba(91, 206, 212, 0.35); }
+
+.pipeline-step[data-step="gate-init"].active .step-node,
+.pipeline-step[data-step="gate-coarse"].active .step-node,
+.pipeline-step[data-step="gate-final"].active .step-node {
+  color: var(--cto);
+  border-color: var(--cto);
 }
 
 /* Pipeline active states */
@@ -282,6 +296,100 @@ main {
   border-color: var(--security) !important;
   box-shadow: 0 0 24px rgba(240, 113, 120, 0.4) !important;
   animation: veto-pulse 1s ease infinite;
+}
+
+.pipeline-step--skipped {
+  opacity: 0.22;
+  filter: grayscale(0.6);
+  pointer-events: none;
+}
+
+.pipeline-step--skipped .step-badge {
+  text-decoration: line-through;
+}
+
+.routing-plan {
+  margin-bottom: 1rem;
+  padding: 0.875rem 1rem;
+  background: rgba(91, 206, 212, 0.06);
+  border: 1px solid rgba(91, 206, 212, 0.2);
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+}
+
+.routing-head {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.35rem;
+}
+
+.routing-badge {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  padding: 0.15rem 0.45rem;
+  border-radius: 999px;
+  background: rgba(91, 206, 212, 0.15);
+  color: var(--architect);
+}
+
+.routing-meta {
+  color: var(--text-secondary);
+  margin: 0 0 0.5rem;
+}
+
+.brief-block {
+  margin: 0.5rem 0 0.75rem;
+  padding: 0.65rem 0.75rem;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line);
+}
+
+.brief-kicker {
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--architect);
+  margin: 0 0 0.4rem;
+}
+
+.brief-block p {
+  margin: 0.25rem 0;
+  color: var(--text-secondary);
+  line-height: 1.45;
+}
+
+.brief-block strong {
+  color: var(--text-primary);
+  margin-right: 0.35rem;
+  font-weight: 600;
+}
+
+.routing-details summary {
+  cursor: pointer;
+  color: var(--text-secondary);
+  font-size: 0.8125rem;
+}
+
+.routing-table {
+  width: 100%;
+  margin-top: 0.5rem;
+  border-collapse: collapse;
+  font-size: 0.8125rem;
+}
+
+.routing-table th,
+.routing-table td {
+  text-align: left;
+  padding: 0.35rem 0.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.routing-skipped {
+  margin-top: 0.5rem;
+  color: var(--text-muted);
+  font-size: 0.8125rem;
 }
 
 @keyframes veto-pulse {

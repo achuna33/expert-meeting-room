@@ -20,7 +20,7 @@
         </span>
         <div>
           <h1>专家会议室</h1>
-          <p class="tagline">诺曼 · 福勒 · 托瓦兹 · 施奈尔 · 沃格尔</p>
+          <p class="tagline">九位专家 · 智能编排 · 按需参会</p>
         </div>
       </div>
       <nav class="header-nav" aria-label="页面导航">
@@ -37,46 +37,90 @@
       <div class="section-head">
         <span class="eyebrow">Meeting Protocol</span>
         <h2>会议流程</h2>
-        <p>议题依次流经各专家，最终由技术总监审阅拍板</p>
+        <p>两阶段 + 三道闸门 · 提交想法后<strong>先解读诉求</strong>，再自动决定谁来开会</p>
       </div>
 
       <div class="pipeline" role="list" aria-label="会议流程步骤">
         <div class="pipeline-track" aria-hidden="true"></div>
         <div class="pipeline-step" data-step="input" role="listitem">
-          <div class="step-node">
-            <span class="step-icon">📋</span>
-          </div>
-          <span class="step-label">议题输入</span>
+          <div class="step-node"><span class="step-icon">📋</span></div>
+          <span class="step-label">诉求深挖</span>
         </div>
-        <div class="pipeline-step" data-step="product" role="listitem">
+        <div class="pipeline-step" data-step="strategy" role="listitem">
+          <div class="step-node"><span class="step-icon">🧭</span></div>
+          <span class="step-label">卡根</span>
+          <span class="step-badge">战略</span>
+        </div>
+        <div class="pipeline-step" data-step="gate-init" role="listitem">
+          <div class="step-node step-node--gate"><span class="step-icon">🚪</span></div>
+          <span class="step-label">立项闸门</span>
+        </div>
+        <div class="pipeline-step pipeline-step--phase-a" data-step="product-a" role="listitem">
           <div class="step-node"><span class="step-icon">🎯</span></div>
-          <span class="step-label">唐·诺曼</span>
+          <span class="step-label">诺曼</span>
+          <span class="step-badge">A</span>
         </div>
-        <div class="pipeline-step" data-step="architect" role="listitem">
-          <div class="step-node"><span class="step-icon">🏗️</span></div>
-          <span class="step-label">马丁·福勒</span>
+        <div class="pipeline-step pipeline-step--phase-a" data-step="metrics-light" role="listitem">
+          <div class="step-node"><span class="step-icon">📊</span></div>
+          <span class="step-label">科哈维</span>
+          <span class="step-badge">度量</span>
         </div>
-        <div class="pipeline-step" data-step="developer" role="listitem">
-          <div class="step-node"><span class="step-icon">⚙️</span></div>
-          <span class="step-label">林纳斯</span>
-        </div>
-        <div class="pipeline-step" data-step="security" role="listitem">
+        <div class="pipeline-step pipeline-step--phase-a" data-step="security-light" role="listitem">
           <div class="step-node"><span class="step-icon">🛡️</span></div>
           <span class="step-label">施奈尔</span>
+          <span class="step-badge">轻量</span>
+        </div>
+        <div class="pipeline-step pipeline-step--phase-a" data-step="dev-tshirt" role="listitem">
+          <div class="step-node"><span class="step-icon">⚙️</span></div>
+          <span class="step-label">林纳斯</span>
+          <span class="step-badge">T-shirt</span>
+        </div>
+        <div class="pipeline-step" data-step="gate-coarse" role="listitem">
+          <div class="step-node step-node--gate"><span class="step-icon">🚪</span></div>
+          <span class="step-label">粗方案闸门</span>
+        </div>
+        <div class="pipeline-step pipeline-step--phase-b" data-step="architect" role="listitem">
+          <div class="step-node"><span class="step-icon">🏗️</span></div>
+          <span class="step-label">福勒</span>
+          <span class="step-badge">B</span>
+        </div>
+        <div class="pipeline-step pipeline-step--phase-b" data-step="dev-detail" role="listitem">
+          <div class="step-node"><span class="step-icon">⚙️</span></div>
+          <span class="step-label">林纳斯</span>
+          <span class="step-badge">明细</span>
+        </div>
+        <div class="pipeline-step pipeline-step--phase-b" data-step="metrics-full" role="listitem">
+          <div class="step-node"><span class="step-icon">📊</span></div>
+          <span class="step-label">科哈维</span>
+          <span class="step-badge">完整</span>
+        </div>
+        <div class="pipeline-step pipeline-step--phase-b" data-step="security-full" role="listitem">
+          <div class="step-node"><span class="step-icon">🛡️</span></div>
+          <span class="step-label">施奈尔</span>
+          <span class="step-badge">完整</span>
+        </div>
+        <div class="pipeline-step pipeline-step--phase-b" data-step="sre" role="listitem">
+          <div class="step-node"><span class="step-icon">📡</span></div>
+          <span class="step-label">梅杰斯</span>
+          <span class="step-badge">SRE</span>
         </div>
         <div class="pipeline-step" data-step="discuss" role="listitem">
           <div class="step-node step-node--optional"><span class="step-icon">💬</span></div>
           <span class="step-label">交叉讨论</span>
           <span class="step-badge">可选</span>
         </div>
-        <div class="pipeline-step" data-step="cto" role="listitem">
+        <div class="pipeline-step" data-step="gate-final" role="listitem">
           <div class="step-node step-node--cto"><span class="step-icon">⚖️</span></div>
-          <span class="step-label">沃格尔</span>
-          <span class="step-badge step-badge--veto">一票否决</span>
+          <span class="step-label">终审</span>
+          <span class="step-badge step-badge--veto">否决权</span>
         </div>
         <div class="pipeline-step" data-step="conclusion" role="listitem">
           <div class="step-node"><span class="step-icon">✅</span></div>
-          <span class="step-label">结论输出</span>
+          <span class="step-label">结论</span>
+        </div>
+        <div class="pipeline-step" data-step="design" role="listitem">
+          <div class="step-node"><span class="step-icon">📐</span></div>
+          <span class="step-label">详细设计</span>
         </div>
       </div>
     </section>
@@ -97,26 +141,30 @@
       <div class="section-head">
         <span class="eyebrow">Start Session</span>
         <h2>发起会议</h2>
-        <p>填写议题信息，逐步推进会议流程</p>
+        <p>一句话想法即可；系统先想透你的诉求，再决定参会专家</p>
       </div>
 
       <div class="meeting-layout">
         <form class="meeting-form" id="meeting-form">
           <div class="form-group">
             <label for="topic-title">议题标题</label>
-            <input type="text" id="topic-title" placeholder="例：设计用户登录系统" required>
+            <input type="text" id="topic-title" placeholder="例：给 SaaS 加个登录" required>
           </div>
           <div class="form-group">
             <label for="topic-bg">背景</label>
-            <textarea id="topic-bg" rows="2" placeholder="为什么现在要讨论这个问题"></textarea>
+            <textarea id="topic-bg" rows="2" placeholder="可空；系统会推断并标为工作假设"></textarea>
           </div>
           <div class="form-group">
             <label for="topic-goal">目标</label>
-            <textarea id="topic-goal" rows="2" placeholder="期望达成什么决策"></textarea>
+            <textarea id="topic-goal" rows="2" placeholder="可空；系统会推断成功长什么样"></textarea>
           </div>
           <div class="form-group">
             <label for="topic-constraints">约束</label>
             <textarea id="topic-constraints" rows="2" placeholder="时间、预算、人力、合规等"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="topic-redlines">红线清单</label>
+            <textarea id="topic-redlines" rows="3" placeholder="至少 3 条不可协商项，例：4 周内上线 / 等保二级 / 禁止明文存密码"></textarea>
           </div>
           <div class="form-actions">
             <button type="submit" class="btn btn-primary">开始会议</button>
@@ -129,6 +177,8 @@
             <h3>会议实况</h3>
             <span class="phase-indicator" id="phase-indicator">等待开始</span>
           </div>
+
+          <div class="routing-plan" id="routing-plan" hidden></div>
 
           <div class="progress-bar" aria-hidden="true">
             <div class="progress-fill" id="progress-fill"></div>
@@ -146,11 +196,20 @@
             <button type="button" class="btn btn-ghost" id="btn-discuss">进入交叉讨论</button>
           </div>
 
-          <div class="cto-decision" id="cto-decision" hidden>
-            <p class="cto-prompt">技术总监审阅完毕，请做出决策：</p>
+          <div class="cto-decision" id="gate-decision" hidden>
+            <p class="cto-prompt" id="gate-prompt">沃格尔闸门决策：</p>
             <div class="cto-actions">
-              <button type="button" class="btn btn-approve" id="btn-approve">通过</button>
-              <button type="button" class="btn btn-veto" id="btn-veto">否决</button>
+              <button type="button" class="btn btn-approve" id="btn-gate-go">▶️ 继续</button>
+              <button type="button" class="btn btn-ghost" id="btn-gate-narrow">🔽 收窄</button>
+              <button type="button" class="btn btn-veto" id="btn-gate-stop">⏹️ 停止</button>
+            </div>
+          </div>
+          <div class="cto-decision" id="cto-decision" hidden>
+            <p class="cto-prompt">沃格尔终审决策：</p>
+            <div class="cto-actions">
+              <button type="button" class="btn btn-approve" id="btn-approve">✅ 通过</button>
+              <button type="button" class="btn btn-ghost" id="btn-conditional">⚠️ 有条件通过</button>
+              <button type="button" class="btn btn-veto" id="btn-veto">❌ 否决</button>
             </div>
           </div>
         </div>
